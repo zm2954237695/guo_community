@@ -7,7 +7,11 @@ import com.example.back.model.vo.PostVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface BmsTopicMapper extends BaseMapper<BmsPost> {
     Page<PostVo> selectListAndPage(@Param("page") Page<PostVo> page, @Param("tab") String tab);
+
+    List<BmsPost> recommend(String topicId);
 }

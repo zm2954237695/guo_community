@@ -84,7 +84,7 @@ public class IBmsPostServiceImpl extends ServiceImpl<BmsTopicMapper,BmsPost> imp
         BmsPost bmsPost = this.baseMapper.selectById(id);
         Assert.notNull(bmsPost,"当前话题不存在或已被发布者删除");
         bmsPost.setView(bmsPost.getView()+1);
-        this.baseMapper.insert(bmsPost);
+        this.baseMapper.updateById(bmsPost);
         bmsPost.setContent(EmojiParser.parseToUnicode(bmsPost.getContent()));
         map.put("topic",bmsPost);
         LambdaQueryWrapper<BmsTopicTag> queryWrapper = new LambdaQueryWrapper<>();
@@ -98,6 +98,11 @@ public class IBmsPostServiceImpl extends ServiceImpl<BmsTopicMapper,BmsPost> imp
         ProfileVo user = userService.getUserByProfile(bmsPost.getUserId());
         map.put("user",user);
         return map;
+    }
+
+    @Override
+    public List<BmsPost> recommend(String id) {
+        return this.baseMapper.recommend(id);
     }
 
     private void setTopicTags(Page<PostVo> ipage) {

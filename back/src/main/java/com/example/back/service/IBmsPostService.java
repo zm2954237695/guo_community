@@ -8,6 +8,7 @@ import com.example.back.model.entity.BmsPost;
 import com.example.back.model.entity.UmsUser;
 import com.example.back.model.vo.PostVo;
 
+import java.util.List;
 import java.util.Map;
 
 public interface IBmsPostService extends IService<BmsPost> {
@@ -16,4 +17,6 @@ public interface IBmsPostService extends IService<BmsPost> {
     BmsPost create(CreateTopicDto dto, UmsUser user);
 
     Map<String, Object> view(String id);
+
+    List<BmsPost> recommend(String id);
 }

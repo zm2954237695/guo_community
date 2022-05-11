@@ -44,9 +44,15 @@ public class BmsPostController extends BaseController {
         return ApiResult.success(topic);
     }
 
-    @GetMapping
+    @GetMapping()
     public ApiResult<Map<String,Object>> view(@RequestParam("id") String id){
         Map<String,Object> map  = bmsPostService.view(id);
         return ApiResult.success(map);
+    }
+
+    @GetMapping("/recommend")
+    public ApiResult<List<BmsPost>> recommend(@RequestParam("topicId")String id){
+        List<BmsPost> postList = bmsPostService.recommend(id);
+        return ApiResult.success(postList);
     }
 }

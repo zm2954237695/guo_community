@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b221d46-0ee6-420c-a8c1-42b5ed7acce9" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsFollowerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/model/entity/BmsFollower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/model/vo/ProfileVo.java" afterDir="false" />
+    <list default="true" id="3b221d46-0ee6-420c-a8c1-42b5ed7acce9" name="变更" comment="two">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/controller/BmsCommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/controller/BmsRelationshipController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsCommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/model/dto/CommentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/model/entity/BmsComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/model/vo/CommentVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/IBmsCommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/IBmsFollowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IBmsCommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IBmsFollowServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BmsCommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsTagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsTagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/controller/BmsPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/controller/BmsPostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsTopicMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/mapper/BmsTopicMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/service/IUmsUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/IUmsUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IUmsUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IUmsUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/service/IUmsUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/service/IUmsUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/service/impl/IUmsUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/service/impl/IUmsUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/doubao_community_frontend-master/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/doubao_community_frontend-master/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/service/IBmsPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/IBmsPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IBmsPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back/service/impl/IBmsPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BmsTopicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BmsTopicMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/controller/BmsPostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/controller/BmsPostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/mapper/BmsTopicMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/mapper/BmsTopicMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/service/IBmsPostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/service/IBmsPostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back/service/impl/IBmsPostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back/service/impl/IBmsPostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BmsTopicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BmsTopicMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +111,24 @@
       <workItem from="1652148816486" duration="5087000" />
       <workItem from="1652167853192" duration="14913000" />
       <workItem from="1652252306420" duration="5546000" />
+      <workItem from="1652258205256" duration="250000" />
+      <workItem from="1652270320563" duration="6512000" />
     </task>
+    <task id="LOCAL-00001" summary="two">
+      <created>1652258232678</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652258232678</updated>
+    </task>
+    <task id="LOCAL-00002" summary="two">
+      <created>1652258281548</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652258281548</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,5 +144,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="two" />
+    <option name="LAST_COMMIT_MESSAGE" value="two" />
   </component>
 </project>
