@@ -5,13 +5,19 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.back.common.exception.ApiAsserts;
 import com.example.back.jwt.JwtUtil;
+import com.example.back.mapper.BmsFollowerMapper;
+import com.example.back.mapper.BmsTopicMapper;
 import com.example.back.mapper.UmsUserMapper;
 import com.example.back.model.dto.LoginDTO;
 import com.example.back.model.dto.RegisterDTO;
+import com.example.back.model.entity.BmsFollower;
+import com.example.back.model.entity.BmsPost;
 import com.example.back.model.entity.UmsUser;
+import com.example.back.model.vo.ProfileVo;
 import com.example.back.service.IUmsUserService;
 import com.example.back.utils.MD5Utils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -24,6 +30,12 @@ public class IUmsUserServiceImpl extends ServiceImpl<UmsUserMapper, UmsUser> imp
 
     @Autowired
     private UmsUserMapper userMapper;
+
+    @Autowired
+    private BmsTopicMapper bmsTopicMapper;
+
+    @Autowired
+    private BmsFollowerMapper bmsFollowerMapper;
     @Override
     public UmsUser register(RegisterDTO dto) {
         LambdaQueryWrapper<UmsUser> queryWrapper = new LambdaQueryWrapper<>();
@@ -65,5 +77,17 @@ public class IUmsUserServiceImpl extends ServiceImpl<UmsUserMapper, UmsUser> imp
            log.warn("用户不存在or密码验证失败=======>{}", dto.getUsername());
        }
        return token;
+    }
+
+    @Override
+    public ProfileVo getUserByProfile(String userId) {
+        ProfileVo profileVo = new ProfileVo();
+        UmsUser user= this.baseMapper.selectById(userId);
+        BeanUtils.copyProperties(user,profileVo);
+        int count = bmsTopicMapper.selectCount(new LambdaQueryWrapper<BmsPost>().eq(BmsPost::getUserId,userId));
+        profileVo.setTopicCount(count);
+        int followers = bmsFollowerMapper.selectCount(new LambdaQueryWrapper<BmsFollower>().eq(BmsFollower::getParentId,userId));
+        profileVo.setFollowerCount(followers);
+        return profileVo;
     }
 }
