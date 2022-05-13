@@ -31,7 +31,7 @@ public class BmsCommentController {
 
 
     @GetMapping("/get_comments")
-    public ApiResult<List<CommentVo>> getCommentList(@RequestParam(value = "topicId",defaultValue = "1")String topicId){
+    public ApiResult<List<CommentVo>> getCommentList(@RequestParam(value = "topicid",defaultValue = "1")String topicId){
         List<CommentVo> lists = commentService.getCommentsByTopicId(topicId);
         return ApiResult.success(lists);
     }

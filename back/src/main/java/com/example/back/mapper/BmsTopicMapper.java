@@ -14,4 +14,5 @@ public interface BmsTopicMapper extends BaseMapper<BmsPost> {
     Page<PostVo> selectListAndPage(@Param("page") Page<PostVo> page, @Param("tab") String tab);
 
     List<BmsPost> recommend(String topicId);
+    Page<PostVo> searchList(String keyword,Page<PostVo>pageVo);
 }

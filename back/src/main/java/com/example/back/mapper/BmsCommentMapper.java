@@ -10,5 +10,5 @@ import java.util.List;
 
 @Mapper
 public interface BmsCommentMapper extends BaseMapper<BmsComment> {
-    List<CommentVo> getCommentsByTopicId(String topicId);
+    List<CommentVo> getCommentsByTopicId(String topicid);
 }

@@ -105,6 +105,13 @@ public class IBmsPostServiceImpl extends ServiceImpl<BmsTopicMapper,BmsPost> imp
         return this.baseMapper.recommend(id);
     }
 
+    @Override
+    public Page<PostVo> searchList(String keyword, Page<PostVo> PostPage) {
+        Page<PostVo> lists = this.baseMapper.searchList(keyword,PostPage);
+        setTopicTags(lists);
+        return lists;
+    }
+
     private void setTopicTags(Page<PostVo> ipage) {
         ipage.getRecords().forEach(topic -> {
             List<BmsTopicTag> topicTags = topicTagService.selectByTopicId(topic.getId());

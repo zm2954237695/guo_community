@@ -64,4 +64,9 @@ public class UmsUserController {
            Assert.notNull(user,"用户名不存在");
            return null;
     }
+    @PostMapping("/update")
+    public ApiResult<UmsUser> updateUser(@RequestBody UmsUser user){
+        userService.updateById(user);
+        return ApiResult.success(user);
+    }
 }

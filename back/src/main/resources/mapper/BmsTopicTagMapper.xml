@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.back.mapper.BmsTagMapper">
-   <select id="selectByTopicId" resultType="java.lang.String">
+<mapper namespace="com.example.back.mapper.BmsTopicTagMapper">
+   <select id="selectTopicIdsByTagId" resultType="java.lang.String">
           select t.topic_id
           from bms_post_tag t
           where t.tag_id = #{id}

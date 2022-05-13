@@ -14,7 +14,7 @@
      select bms_comment.*,ums_user.username
      from bms_comment
       join ums_user on ums_user.id = bms_comment.user_id
-      where topic_id = #{topicId}
+      where topic_id = #{topicid}
       order by create_time desc
    </select>
 </mapper>

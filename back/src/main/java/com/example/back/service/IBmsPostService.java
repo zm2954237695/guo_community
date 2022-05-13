@@ -19,4 +19,6 @@ public interface IBmsPostService extends IService<BmsPost> {
     Map<String, Object> view(String id);
 
     List<BmsPost> recommend(String id);
+
+    Page<PostVo> searchList(String keyword, Page<PostVo> objectPage);
 }
